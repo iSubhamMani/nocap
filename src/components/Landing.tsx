@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { MessageSquare, LinkIcon, Smartphone, ChevronDown } from "lucide-react";
 import { FaXTwitter, FaInstagram, FaChartSimple } from "react-icons/fa6";
+import AuthCard from "./AuthCard";
 
 export default function LandingPage() {
   return (
@@ -36,13 +37,17 @@ export default function LandingPage() {
             >
               About
             </Link>
-            <Button className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/10 text-white rounded-full">
+            <AuthCard initialFormState="login">
+              <Button className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/10 text-white rounded-full">
+                Login
+              </Button>
+            </AuthCard>
+          </nav>
+          <AuthCard initialFormState="login">
+            <Button className="md:hidden bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/10 text-white rounded-full">
               Login
             </Button>
-          </nav>
-          <Button className="md:hidden bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/10 text-white rounded-full">
-            Login
-          </Button>
+          </AuthCard>
         </div>
       </header>
 
@@ -57,9 +62,11 @@ export default function LandingPage() {
             <span className="text-pink-400 animate-pulse">NoCap.</span>
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mb-16">
-            <Button className="rounded-full text-lg px-8 py-6 bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-90 transition-all shadow-[0_0_15px_rgba(236,72,153,0.5)] hover:shadow-[0_0_25px_rgba(236,72,153,0.7)]">
-              Drop Your Link <LinkIcon className="ml-2" />
-            </Button>
+            <AuthCard initialFormState="register">
+              <Button className="rounded-full text-lg px-8 py-6 bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-90 transition-all shadow-[0_0_15px_rgba(236,72,153,0.5)] hover:shadow-[0_0_25px_rgba(236,72,153,0.7)]">
+                Drop Your Link <LinkIcon className="ml-2" />
+              </Button>
+            </AuthCard>
           </div>
 
           {/* Mockup */}
@@ -78,13 +85,6 @@ export default function LandingPage() {
               </p>
               <div className="flex justify-between items-center">
                 <span className="text-sm text-white/60">2h ago</span>
-                <Button
-                  size="sm"
-                  variant="ghost"
-                  className="text-pink-400 hover:text-pink-300 hover:bg-pink-500/10"
-                >
-                  Reply
-                </Button>
               </div>
             </div>
           </div>
