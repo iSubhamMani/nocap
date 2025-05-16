@@ -228,12 +228,14 @@ export default function LandingPage() {
 
             <div className="flex gap-4">
               <Link
+                target="_blank"
                 href="https://x.com/manisubham09"
                 className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all group"
               >
                 <FaXTwitter className="text-white/70 group-hover:text-pink-400 transition-colors" />
               </Link>
               <Link
+                target="_blank"
                 href="https://instagram.com/subhamxmani"
                 className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all group"
               >
