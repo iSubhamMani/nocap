@@ -46,10 +46,10 @@ const AuthCard = ({
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="bg-white/10 backdrop-blur-md border border-white/10 text-white rounded-md">
         <DialogHeader>
-          <DialogTitle>
+          <DialogTitle className="text-center">
             {formType === "register" ? "Register" : "Login"}
           </DialogTitle>
-          <DialogDescription>
+          <DialogDescription className="text-center">
             {formType === "register"
               ? "Create a new account"
               : "Login to your account"}
@@ -57,16 +57,22 @@ const AuthCard = ({
           <form onSubmit={handleSubmit}>
             <div className="grid gap-6 py-4">
               <div className="grid gap-4">
-                <Label htmlFor="email">Email</Label>
+                <Label className="text-start" htmlFor="email">
+                  Email
+                </Label>
                 <Input id="email" type="email" placeholder="Email" />
               </div>
               <div className="grid gap-4">
-                <Label htmlFor="password">Password</Label>
+                <Label className="text-start" htmlFor="password">
+                  Password
+                </Label>
                 <Input id="password" type="password" placeholder="Password" />
               </div>
               {formType === "register" && (
                 <div className="grid gap-4">
-                  <Label htmlFor="confirm-password">Confirm Password</Label>
+                  <Label className="text-start" htmlFor="confirm-password">
+                    Confirm Password
+                  </Label>
                   <Input
                     id="confirm-password"
                     type="password"

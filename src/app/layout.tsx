@@ -10,8 +10,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "NoCap - Anonymous Messaging App",
-  description: "Ask. Spill. Repeat. All anonymous. NoCap.",
+  title: "RSVPMe",
+  description: "Your event, your way",
 };
 
 export default function RootLayout({
