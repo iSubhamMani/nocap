@@ -2,8 +2,11 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { FaXTwitter, FaInstagram } from "react-icons/fa6";
 import LandingCalendarSvg from "./LandingCalendarSvg";
+import { withAuth } from "@workos-inc/authkit-nextjs";
 
-export default function LandingPage() {
+export default async function LandingPage() {
+  const { user } = await withAuth();
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-zinc-900 to-black text-white overflow-hidden">
       {/* Background glow effects */}
@@ -30,19 +33,23 @@ export default function LandingPage() {
             >
               Pricing
             </Link>
-            <Link href={"/login"}>
-              <Button className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/10 text-white rounded-full">
-                Sign In
-              </Button>
-            </Link>
+            {!user && (
+              <Link href={"/login"}>
+                <Button className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/10 text-white rounded-full">
+                  Sign In
+                </Button>
+              </Link>
+            )}
           </nav>
-          <div className="md:hidden">
-            <Link href={"/login"}>
-              <Button className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/10 text-white rounded-full">
-                Sign In
-              </Button>
-            </Link>
-          </div>
+          {!user && (
+            <div className="md:hidden">
+              <Link href={"/login"}>
+                <Button className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/10 text-white rounded-full">
+                  Sign In
+                </Button>
+              </Link>
+            </div>
+          )}
         </div>
       </header>
 
@@ -64,7 +71,7 @@ export default function LandingPage() {
                 ease. Host memorable events that leave a lasting impression.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Link href={"/home"}>
+                <Link href={"/events"}>
                   <Button className="rounded-full text-lg px-8 py-6 bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-90 transition-all shadow-[0_0_15px_rgba(236,72,153,0.5)] hover:shadow-[0_0_25px_rgba(236,72,153,0.7)]">
                     Create Your Event
                   </Button>

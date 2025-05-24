@@ -5,7 +5,7 @@ export const GET = async () => {
   const { user } = await withAuth();
 
   if (user) {
-    return redirect("/home");
+    return redirect("/events");
   }
 
   const signInUrl = await getSignInUrl();
