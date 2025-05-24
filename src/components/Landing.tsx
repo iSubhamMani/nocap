@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { FaXTwitter, FaInstagram } from "react-icons/fa6";
-import AuthCard from "./AuthCard";
 import LandingCalendarSvg from "./LandingCalendarSvg";
 
 export default function LandingPage() {
@@ -31,18 +30,18 @@ export default function LandingPage() {
             >
               Pricing
             </Link>
-            <AuthCard initialFormState="login">
+            <Link href={"/login"}>
               <Button className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/10 text-white rounded-full">
                 Sign In
               </Button>
-            </AuthCard>
+            </Link>
           </nav>
           <div className="md:hidden">
-            <AuthCard initialFormState="login">
+            <Link href={"/login"}>
               <Button className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/10 text-white rounded-full">
                 Sign In
               </Button>
-            </AuthCard>
+            </Link>
           </div>
         </div>
       </header>
@@ -65,11 +64,11 @@ export default function LandingPage() {
                 ease. Host memorable events that leave a lasting impression.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <AuthCard initialFormState="register">
+                <Link href={"/home"}>
                   <Button className="rounded-full text-lg px-8 py-6 bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-90 transition-all shadow-[0_0_15px_rgba(236,72,153,0.5)] hover:shadow-[0_0_25px_rgba(236,72,153,0.7)]">
                     Create Your Event
                   </Button>
-                </AuthCard>
+                </Link>
               </div>
             </div>
 
